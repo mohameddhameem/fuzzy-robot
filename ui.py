@@ -83,13 +83,13 @@ class Ui(QtWidgets.QMainWindow, FormClass):
         goal_reached = self.success(x, y, x_d, y_d)
 
         print(
-            f"x:{round(x,degree)}, "
-            f"y:{round(y,degree)}, "
+            "x:{round(x,degree)}, "
+            "y:{round(y,degree)}, "
             # f"t = {round(atan2(y_d - y, x_d - x), degree)}, "
-            f"theta = {round(theta, degree)}, "
-            f"alpha:{round(a,degree)}, "
-            f"p: {msg['p']}, "
-            f"ed: {msg['ed']}, "
+            "theta = {round(theta, degree)}, "
+            "alpha:{round(a,degree)}, "
+            "p: {msg['p']}, "
+            "ed: {msg['ed']}, "
         )
 
         self.show_solution([x, y], [x_d, y_d])
@@ -101,7 +101,7 @@ class Ui(QtWidgets.QMainWindow, FormClass):
             u, w = self.fuzzy_system.run(msg)
             u /= denominator
             w /= denominator
-            print(f"u: {u}, w: {w}")
+            print("u: {}, w: {}". format(u,w ))
 
             theta += w
             theta = ((-theta + np.pi) % (2.0 * np.pi) - np.pi) * -1.0
@@ -120,15 +120,16 @@ class Ui(QtWidgets.QMainWindow, FormClass):
             ed = max(min(ed, 1), -1)
 
             msg = {'dl': dl, 'df': df, 'dr': dr, 'alpha': a, 'p': p, 'ed': ed}
-            # print(f"u = {round(u,degree)}, w = {round(w,degree)}")
+            #print("u = {}, w = {}".format(round(u,degree), round(w,degree)))
             print(
-                f"x:{round(x,degree)}, "
-                f"y:{round(y,degree)}, "
+                "x:{}, "
+                "y:{}, "
                 # f"t = {round(atan2(y_d - y, x_d - x), degree)}, "
-                f"theta = {round(theta, degree)}, "
-                f"alpha:{round(a,degree)}, "
-                f"p: {msg['p']}, "
-                f"ed: {msg['ed']}, "
+                "theta = {}, "
+                "alpha:{}, "
+                "p: {}, "
+                "ed: {}, ".format(round(x,degree),round(y,degree),round(theta, degree),round(a,degree),msg['p']
+                                           , msg['ed'])
             )
             goal_reached = self.success(x, y, x_d, y_d)
             time.sleep(Ui.time_between_plot)

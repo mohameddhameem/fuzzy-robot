@@ -59,7 +59,7 @@ if __name__ == '__main__':
         # dr = round(random() * 4, 2)
         # df = round(random() * 4, 2)
         u, w = fuzzy_system.run(msg)
-        print(f"u: {u}, w: {w}")
+        print("u: {u}, w: {w}")
 
         theta += w
         theta = ((-theta + np.pi) % (2.0 * np.pi) - np.pi) * -1.0
@@ -76,13 +76,13 @@ if __name__ == '__main__':
         msg = {'dl': 3.21, 'df': 3.51, 'dr': 3.22, 'alpha': a, 'p': p, 'ed': ed}
         # print(f"u = {round(u,degree)}, w = {round(w,degree)}")
         print(
-            f"x:{round(x,degree)}, "
-            f"y:{round(y,degree)}, "
+            "x:{round(x,degree)}, "
+            "y:{round(y,degree)}, "
             # f"t = {round(atan2(y_d - y, x_d - x), degree)}, "
-            f"theta = {round(theta, degree)}, "
-            f"alpha:{round(a,degree)}, "
-            f"p: {msg['p']}, "
-            f"ed: {msg['ed']}, "
+            "theta = {round(theta, degree)}, "
+            "alpha:{round(a,degree)}, "
+            "p: {msg['p']}, "
+            "ed: {msg['ed']}, "
         )
         goal_reached = success(x, y, x_d, y_d)
 
