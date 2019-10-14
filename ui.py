@@ -18,7 +18,7 @@ FormClass = uic.loadUiType("ui.ui")[0]
 
 class Ui(QtWidgets.QMainWindow, FormClass):
     background_color = (255, 255, 255, 1)
-    max_range = 25
+    max_range = 100
     incremental = True
     time_between_plot = 0.2
     goal_threshold = 1
