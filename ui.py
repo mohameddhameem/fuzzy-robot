@@ -83,13 +83,14 @@ class Ui(QtWidgets.QMainWindow, FormClass):
         goal_reached = self.success(x, y, x_d, y_d)
 
         print(
-            "x:{round(x,degree)}, "
-            "y:{round(y,degree)}, "
+            "x:{}, "
+            "y:{}, "
             # f"t = {round(atan2(y_d - y, x_d - x), degree)}, "
-            "theta = {round(theta, degree)}, "
-            "alpha:{round(a,degree)}, "
-            "p: {msg['p']}, "
-            "ed: {msg['ed']}, "
+            "theta = {}, "
+            "alpha:{}, "
+            "p: {}, "
+            "ed: {}, ".format(round(x,degree),round(y,degree), round(theta, degree), round(a,degree),
+                                       msg['p'],msg['ed'] )
         )
 
         self.show_solution([x, y], [x_d, y_d])
